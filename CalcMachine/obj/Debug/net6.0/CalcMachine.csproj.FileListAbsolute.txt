@@ -1,0 +1,15 @@
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\bin\Debug\net6.0\CalcMachine.exe
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\bin\Debug\net6.0\CalcMachine.deps.json
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\bin\Debug\net6.0\CalcMachine.runtimeconfig.json
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\bin\Debug\net6.0\CalcMachine.dll
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\bin\Debug\net6.0\CalcMachine.pdb
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\obj\Debug\net6.0\CalcMachine.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\obj\Debug\net6.0\CalcMachine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\obj\Debug\net6.0\CalcMachine.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\obj\Debug\net6.0\CalcMachine.AssemblyInfo.cs
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\obj\Debug\net6.0\CalcMachine.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\obj\Debug\net6.0\CalcMachine.dll
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\obj\Debug\net6.0\refint\CalcMachine.dll
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\obj\Debug\net6.0\CalcMachine.pdb
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\obj\Debug\net6.0\CalcMachine.genruntimeconfig.cache
+C:\Users\USUARIO\Desktop\Aprendizado Programação\CalcMachine\obj\Debug\net6.0\ref\CalcMachine.dll
