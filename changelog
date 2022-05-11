@@ -1,0 +1,5 @@
+Alpha 1.0.1
+-Initial Commit
+-Supports all 4 basic operations (Addition, Subtraction, Multiplication and Division)
+-Supports only input of two Integer numbers, program must be reset after every operation
+-Can output decimal values in Divisions
