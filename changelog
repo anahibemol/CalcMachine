@@ -1,8 +1,13 @@
+Alpha 2.0.1
+-Addition of new opening menu for the program, as it now supports trigonometry;
+-Addition of trigonometry support, allowing for the calculation of 6 Functions (Sine, Cosine, Tangent, Cosecant, Secant and Cotangent);
+-Relabeling of the operations menu in virtue of a more understandable UI;
+
 Alpha 1.1.1
--Exponentiation added
+-Exponentiation added;
 
 Alpha 1.0.1
 -Initial Commit
--Supports all 4 basic operations (Addition, Subtraction, Multiplication and Division)
--Supports only input of two Integer numbers, program must be reset after every operation
--Can output decimal values in Divisions
+-Supports all 4 basic operations (Addition, Subtraction, Multiplication and Division);
+-Supports only input of two Integer numbers, program must be reset after every operation;
+-Can output decimal values in Divisions;
