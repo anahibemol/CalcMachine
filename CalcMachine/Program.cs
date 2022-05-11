@@ -1,4 +1,4 @@
-﻿Console.WriteLine("Select The Two Numbers you wish to calculate");
+Console.WriteLine("Select The Two Numbers you wish to calculate");
 
 int num1 = Convert.ToInt32(Console.ReadLine());
 int num2 = Convert.ToInt32(Console.ReadLine());
@@ -8,7 +8,8 @@ Console.WriteLine(@"
   1-Addition  
   2-Subtraction  
   3-Multiplication  
-  4-Division");
+  4-Division
+  5-Exponentiation");
 
 string operation = Console.ReadLine() ?? "1";
 
@@ -31,6 +32,10 @@ switch(operation)
     float float1 = float.Parse(num1.ToString());
     float float2 = float.Parse(num2.ToString());
     Console.WriteLine($"The Result of {num1} / {num2} is {float1 / float2}");
+    break;
+
+  case "5":
+    Console.WriteLine($"The Result of {num1} ^ {num2} is {Math.Pow(num1, num2)}");
     break;
 
   default:
