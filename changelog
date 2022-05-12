@@ -1,7 +1,10 @@
+Alpha 2.2.1
+-Now the Calculaor can Loop, after you calculate your number, it asks if you want to use it agian instead of just closing;
+
 Alpha 2.1.1
--Support for decimal numbers in arithmetic calculator
--Addition of special support, allowing for some special operations (ex: inversion)
--Relabeling of trigonometric operations
+-Support for decimal numbers in arithmetic calculator;
+-Addition of special support, allowing for some special operations (ex: inversion);
+-Relabeling of trigonometric operations;
 
 
 Alpha 2.0.1
