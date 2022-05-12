@@ -1,3 +1,9 @@
+Alpha 2.1.1
+-Support for decimal numbers in arithmetic calculator
+-Addition of special support, allowing for some special operations (ex: inversion)
+-Relabeling of trigonometric operations
+
+
 Alpha 2.0.1
 -Addition of new opening menu for the program, as it now supports trigonometry;
 -Addition of trigonometry support, allowing for the calculation of 6 Functions (Sine, Cosine, Tangent, Cosecant, Secant and Cotangent);
