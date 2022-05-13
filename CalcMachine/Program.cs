@@ -123,6 +123,9 @@
         1-Square
         2-Rectangle
         3-Triangle (Equilateral)
+        4-Triangle (Isoceles) TO BE ADDED
+        5-Triangle (Scalene) TO BE ADDED
+        6-Hexagon
         ");
 
      string SpecialGeo = Console.ReadLine() ?? "1"; 
@@ -138,6 +141,7 @@
         1-The Square has a Side of {Side}
         2-The Square has a area of {Side*Side}
         3-The Square has a diagonal of {Math.Sqrt(2*(Side*Side))}
+        4-The Square has a apothem of {Side/2}
         ");
          
        break;
@@ -165,7 +169,7 @@
 
        switch (EQSideOrHeight)
        {
-        case "1":
+         case "1":
        Console.WriteLine("Write the length of the Side");
 
         double EQTriSide = Convert.ToDouble(Console.ReadLine());
@@ -173,10 +177,11 @@
        Console.WriteLine(@$"
         1-The length of the side is {EQTriSide}
         2-The height of the triangle is {(Math.Sqrt(3)*(EQTriSide))/2}
-        3-The area of the triangle is {(Math.Sqrt(3)*(EQTriSide*EQTriSide)/4)}");        
+        3-The area of the triangle is {(Math.Sqrt(3)*(EQTriSide*EQTriSide)/4)}  
+        4-The apothem of the triangle is {(Math.Sqrt(3)*(EQTriSide))/6} ");      
         break;
 
-        case "2":
+         case "2":
        Console.WriteLine("Write the height of the triangle");
 
         double EQTriHeight = Convert.ToDouble(Console.ReadLine());
@@ -184,11 +189,66 @@
        Console.WriteLine(@$"
         1-The height of the triangle is {EQTriHeight}
         2-The length of the side is {(2*(Math.Sqrt(3)*EQTriHeight))/3}
-        3-The area of the triangle is {(((2*(Math.Sqrt(3)*EQTriHeight))/3)*(EQTriHeight))/2}");  
+        3-The area of the triangle is {(((2*(Math.Sqrt(3)*EQTriHeight))/3)*(EQTriHeight))/2} 
+        4-The apothem of the triangle is {EQTriHeight/3}"); 
         break;
 
        }
-       break;      
+      
+      break;  
+      case "6":
+      Console.WriteLine("Do you know the Side, the Height or the Apothem?");
+       Console.WriteLine(@"
+        1-Side
+        2-Height
+        3-Apothem");
+
+      string HexSideOrHeight = Console.ReadLine() ?? "1";  
+
+      switch (HexSideOrHeight)
+      {
+
+        case "1":
+        
+       Console.WriteLine("Write the length of the side of the hexagon");
+
+        double HexSide = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine(@$"
+        1-The side of the hexagon is {HexSide}
+        2-The height of the hexagon is {(Math.Sqrt(3)*HexSide)}
+        3-The area of the hexagon is {(Math.Sqrt(3)*((HexSide*HexSide)*3))/2} 
+        4-The apothem of the hexagon is {(Math.Sqrt(3)*HexSide)/2}"); 
+        break;
+
+        case "2":
+       Console.WriteLine("Write the height of the hexagon");
+
+        double HexHeight = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine(@$"
+        1-The side of the hexagon is {(Math.Sqrt(3)*HexHeight)/3}
+        2-The height of the hexagon is {HexHeight}
+        3-The area of the hexagone is {(((Math.Sqrt(3)*HexHeight)/3)*((Math.Sqrt(3)*HexHeight)/3)*3)/2} 
+        4-The apothem of the hexagon is {HexHeight/2}"); 
+        break;
+
+        case "3":
+       Console.WriteLine("Write the apothem of the hexagon");
+
+        double HexApo= Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine(@$"
+        1-The side of the hexagon is {(Math.Sqrt(3)*HexApo*2)/3}
+        2-The height of the hexagon is {2*HexApo}
+        3-The area of the hexagone is {(((Math.Sqrt(3)*HexApo*2)/3)*((Math.Sqrt(3)*HexApo*2)/3)*3)/2} 
+        4-The apothem of the hexagon is {HexApo}"); 
+        break;
+      }
+
+
+
+      break;    
      }
   
 
