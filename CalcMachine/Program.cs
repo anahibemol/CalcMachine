@@ -4,20 +4,21 @@
     Console.WriteLine(@"
       1-Arithmetic 
       2-Trigonometric
-      3-Special");
+      3-Geometric
+      9-Special");
 
     string CalculatorCore = Console.ReadLine() ?? "1";
 
     switch(CalculatorCore)
 
     {
-    case "1":
+  case "1":
       Console.WriteLine("Write The Two Numbers you wish to calculate");
 
       double num1 = Convert.ToDouble(Console.ReadLine());
       double num2 = Convert.ToDouble(Console.ReadLine());
 
-      Console.WriteLine("Select the number of the wanted operation");
+      Console.WriteLine("Select the number of the wanted Operation");
       Console.WriteLine(@"
         1-Addition       (x+y) 
         2-Subtraction    (x-y)
@@ -25,9 +26,9 @@
         4-Division       (x/y)
         5-Exponentiation (x^y)");
 
-      string operation = Console.ReadLine() ?? "1";
+      string SpecialArit = Console.ReadLine() ?? "1";
 
-      switch(operation) 
+      switch(SpecialArit) 
       {
       case "1":
           double res = num1 + num2;
@@ -56,8 +57,8 @@
         Console.WriteLine("Invalid option");
         break;
       }
-    break;
-    case "2":
+ break;
+ case "2":
       Console.WriteLine("Write the value of the angle");
 
       int num3 = Convert.ToInt32(Console.ReadLine());
@@ -72,13 +73,13 @@
         6-Cotangent (Cotan)
         7-All");
 
-      string TrigonometricFunction = Console.ReadLine() ?? "1";
+      string SpecialTrig = Console.ReadLine() ?? "1";
 
       double double3 = double.Parse(num3.ToString());
       double radian3 = (double3 * (Math.PI)) / 180;
       
 
-      switch(TrigonometricFunction) 
+      switch(SpecialTrig) 
       {
 
         case "1":
@@ -115,8 +116,84 @@
         break;
       }
 
-    break;
-    case "3":
+  break;
+  case "3":
+      Console.WriteLine("Select the type of Polygon you want to calculate");
+      Console.WriteLine(@"
+        1-Square
+        2-Rectangle
+        3-Triangle (Equilateral)
+        ");
+
+     string SpecialGeo = Console.ReadLine() ?? "1"; 
+
+     switch (SpecialGeo)
+     {
+       case "1":
+       Console.WriteLine("Write the length of the Side");
+
+        double Side = Convert.ToDouble(Console.ReadLine());
+
+       Console.WriteLine(@$"
+        1-The Square has a Side of {Side}
+        2-The Square has a area of {Side*Side}
+        3-The Square has a diagonal of {Math.Sqrt(2*(Side*Side))}
+        ");
+         
+       break;
+
+       case "2":
+       Console.WriteLine("Write the length and the height of the Retangle");
+
+        double RecLength = Convert.ToDouble(Console.ReadLine());   
+        double RecHeight = Convert.ToDouble(Console.ReadLine()); 
+
+        Console.WriteLine(@$"
+        1-The Rectangle has a length of {RecLength} and a height of {RecHeight}
+        2-The Rectangle has a area of {RecLength*RecHeight}
+        3-The Rectangle has a diagonal of {Math.Sqrt((RecHeight*RecHeight)+(RecLength*RecLength))}
+        ");  
+       break;
+
+       case "3":
+       Console.WriteLine("Do you know the Side or the Height?");
+       Console.WriteLine(@"
+        1-Side
+        2-Height");
+
+       string EQSideOrHeight = Console.ReadLine() ?? "1";
+
+       switch (EQSideOrHeight)
+       {
+        case "1":
+       Console.WriteLine("Write the length of the Side");
+
+        double EQTriSide = Convert.ToDouble(Console.ReadLine());
+
+       Console.WriteLine(@$"
+        1-The length of the side is {EQTriSide}
+        2-The height of the triangle is {(Math.Sqrt(3)*(EQTriSide))/2}
+        3-The area of the triangle is {(Math.Sqrt(3)*(EQTriSide*EQTriSide)/4)}");        
+        break;
+
+        case "2":
+       Console.WriteLine("Write the height of the triangle");
+
+        double EQTriHeight = Convert.ToDouble(Console.ReadLine());
+
+       Console.WriteLine(@$"
+        1-The height of the triangle is {EQTriHeight}
+        2-The length of the side is {(2*(Math.Sqrt(3)*EQTriHeight))/3}
+        3-The area of the triangle is {(((2*(Math.Sqrt(3)*EQTriHeight))/3)*(EQTriHeight))/2}");  
+        break;
+
+       }
+       break;      
+     }
+  
+
+  break;
+  case "9":
       Console.WriteLine("Write the Number you will use");
       
       int num4 = Convert.ToInt32(Console.ReadLine());
@@ -127,9 +204,9 @@
       Console.WriteLine(@"
         1-Inverse (1/x)");
 
-    string Special = Console.ReadLine() ?? "1";       
+    string SpecialSpecial = Console.ReadLine() ?? "1";       
 
-      switch(Special)
+      switch(SpecialSpecial)
       {
 
         case "1":
