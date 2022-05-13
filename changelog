@@ -1,7 +1,10 @@
-Alpha 2.3.1
--Now the calculator has support for the calculation of some geometric properties
--Renaming of variables to make it easier to organize
+-Alpha 2.3.2
+-Added Hexagons to the Geometric Calculator;
+-Now the calculator also returns the apothems for squares, triangles and hexagons;
 
+Alpha 2.3.1
+-Now the calculator has support for the calculation of some geometric properties;
+-Renaming of variables to make it easier to organize;
 
 Alpha 2.2.1
 -Now the Calculaor can Loop, after you calculate your number, it asks if you want to use it agian instead of just closing;
