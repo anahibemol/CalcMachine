@@ -1,4 +1,4 @@
-  static void programa()
+static void programa()
   {
     Console.WriteLine("Select the type of calculator you want to use");
     Console.WriteLine(@"
@@ -229,7 +229,7 @@
         Console.WriteLine(@$"
         1-The side of the hexagon is {(Math.Sqrt(3)*HexHeight)/3}
         2-The height of the hexagon is {HexHeight}
-        3-The area of the hexagone is {(((Math.Sqrt(3)*HexHeight)/3)*((Math.Sqrt(3)*HexHeight)/3)*3)/2} 
+        3-The area of the hexagone is {((Math.Sqrt(3)*((Math.Sqrt(3))*(HexHeight))/3)*(((Math.Sqrt(3))*(HexHeight))))/2} 
         4-The apothem of the hexagon is {HexHeight/2}"); 
         break;
 
