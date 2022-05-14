@@ -57,8 +57,8 @@
           Console.WriteLine($"The Logarithm of {num1} with a {num2} base is {Math.Log(num1, num2)}");
           break;
       default:
-        Console.WriteLine("Invalid option");
-        break;
+          Console.WriteLine("Invalid option");
+          break;
       }
  break;
  case "2":
@@ -126,8 +126,8 @@
         1-Square
         2-Rectangle
         3-Triangle (Equilateral)
-        4-Triangle (Isoceles) TO BE ADDED
-        5-Triangle (Scalene) TO BE ADDED
+        4-Triangle (Isoceles)
+        5-Circle
         6-Hexagon
         ");
 
@@ -198,7 +198,64 @@
 
        }
       
-      break;  
+      break;
+      case "4":
+      Console.WriteLine("Write the length of the base and the legs");
+        double IsoTriBase = Convert.ToDouble(Console.ReadLine());
+        double IsoTriLegs = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine(@$"
+        1-The height of the triangle is {Math.Sqrt((IsoTriLegs*IsoTriLegs)-(IsoTriBase*IsoTriBase)/4)}
+        2-The area of the triangle is {(IsoTriBase/4)*(Math.Sqrt(4*(IsoTriLegs*IsoTriLegs)-(IsoTriBase*IsoTriBase)))}");
+        
+      break;
+      case "5":
+      Console.WriteLine("Do you know the radius, the area or the circunference?");
+       Console.WriteLine(@"
+        1-Radius
+        2-Circunference
+        3-Area");
+
+        string CircRadiusOrArea = Console.ReadLine() ?? "1";
+
+        switch (CircRadiusOrArea)
+        {
+          case "1":
+          Console.WriteLine("Insert the Radius");
+        double CircRadius = Convert.ToDouble(Console.ReadLine()); 
+           
+         Console.WriteLine(@$"
+        1-The Radius is {CircRadius}
+        2-The Diameter is {CircRadius*2}
+        3-The length of the Circunference is {(2*Math.PI)*CircRadius}
+        4-The Area of the Circle is {Math.PI*(CircRadius*CircRadius)}");
+          
+          break;
+          case "2":
+          Console.WriteLine("Insert the Circunference");
+        double CircCirc = Convert.ToDouble(Console.ReadLine()); 
+           
+         Console.WriteLine(@$"
+        1-The Radius is {CircCirc/(2*(Math.PI))}
+        2-The Diameter is {CircCirc/(Math.PI)}
+        3-The length of the Circunference is {CircCirc}
+        4-The Area of the Circle is {Math.PI*((CircCirc/(2*(Math.PI)))*(CircCirc/(2*(Math.PI))))}");
+                     
+          break;
+          case "3":
+          Console.WriteLine("Insert the Area");
+        double CircArea = Convert.ToDouble(Console.ReadLine()); 
+           
+         Console.WriteLine(@$"
+        1-The Radius is {Math.Sqrt(CircArea/Math.PI)}
+        2-The Diameter is {2*(Math.Sqrt(CircArea/Math.PI))}
+        3-The length of the Circunference is {2*(Math.Sqrt(CircArea/Math.PI))*Math.PI}
+        4-The Area of the Circle is {CircArea}");
+                     
+          break;
+        }
+
+      break;
       case "6":
       Console.WriteLine("Do you know the Side, the Height or the Apothem?");
        Console.WriteLine(@"
