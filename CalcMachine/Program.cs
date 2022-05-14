@@ -25,7 +25,7 @@
         3-Multiplication   (x*y) 
         4-Division         (x/y)
         5-Exponentiation   (x^y)
-        6-Logarithm        (LogyX");
+        6-Logarithm        (LogyX)");
 
       string SpecialArit = Console.ReadLine() ?? "1";
 
