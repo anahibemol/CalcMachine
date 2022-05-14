@@ -1,6 +1,6 @@
-static void programa()
+  static void programa()
   {
-    Console.WriteLine("Select the type of calculator you want to use");
+        Console.WriteLine("Select the type of calculator you want to use");
     Console.WriteLine(@"
       1-Arithmetic 
       2-Trigonometric
@@ -20,11 +20,12 @@ static void programa()
 
       Console.WriteLine("Select the number of the wanted Operation");
       Console.WriteLine(@"
-        1-Addition       (x+y) 
-        2-Subtraction    (x-y)
-        3-Multiplication (x*y) 
-        4-Division       (x/y)
-        5-Exponentiation (x^y)");
+        1-Addition         (x+y) 
+        2-Subtraction      (x-y)
+        3-Multiplication   (x*y) 
+        4-Division         (x/y)
+        5-Exponentiation   (x^y)
+        6-Logarithm        (LogyX");
 
       string SpecialArit = Console.ReadLine() ?? "1";
 
@@ -52,7 +53,9 @@ static void programa()
       case "5":
           Console.WriteLine($"The Result of {num1} ^ {num2} is {Math.Pow(num1, num2)}");
           break;
-
+      case "6":
+          Console.WriteLine($"The Logarithm of {num1} with a {num2} base is {Math.Log(num1, num2)}");
+          break;
       default:
         Console.WriteLine("Invalid option");
         break;
@@ -273,12 +276,15 @@ static void programa()
 
         Console.WriteLine($"The Inverse of {num4} is {1f/num4}");
         break;
+        default:
+        Console.WriteLine("Invalid Operation");
+        break;
       }
 
     break;
     }
     Console.ReadLine();
-  }
+  
   programa();
 
      Console.WriteLine("Do you want to use it again?");
@@ -299,6 +305,7 @@ static void programa()
       break;
 
     } 
-
+  }
+programa();
     /*Very special thanks to my friend Victória (EternalQuasar0206) for helping me with the refactoring
     the code and by guiding and explaining some of the features needed to implement some of my ideas*/
