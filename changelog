@@ -1,5 +1,11 @@
+-Beta 1.0.1
+-Major reorganization of the code, refactoring Operations and Modules into Methods;
+-Relabeling and smarter use of the code in order to reduce the number of variables;
+-Preparation for WIP Physics Module;
+-Added two new modules (Algebraic and Function) to the calculator;
+
 -Alpha 2.4.2
--Added Isoceles Triangle and Circunference to the Geometric Calculator
+-Added Isoceles Triangle and Circunference to the Geometric Calculator;
 
 -Alpha 2.4.1
 -Fixed Looping Mechanism;
