@@ -114,7 +114,7 @@ static void TrigonometricCalc()
      6 - Cotangent (Cotan)
      7 - All");
    string SpecialTrig = Console.ReadLine() ?? "1";
-   double radian3 = (num1 * (Math.PI)) / 180;
+   double radian3 = (num1 * (Math.PI)) / 180; //converts the angle to radians
    
    switch(SpecialTrig) 
    {
@@ -300,14 +300,14 @@ static void PolygonCalc()
     Console.WriteLine(@$"
     1-The side of the hexagon is {(Math.Sqrt(3)*HexVar)/3}
     2-The height of the hexagon is {HexVar}
-    3-The area of the hexagone is {((Math.Sqrt(3)*((Math.Sqrt(3))*(HexVar))/3)*(((Math.Sqrt(3))*(HexVar))))/2} 
+    3-The area of the hexagon is {((Math.Sqrt(3)*((Math.Sqrt(3))*(HexVar))/3)*(((Math.Sqrt(3))*(HexVar))))/2} 
     4-The apothem of the hexagon is {HexVar/2}"); 
     break;
     case "3":
     Console.WriteLine(@$"
     1-The side of the hexagon is {(Math.Sqrt(3)*HexVar*2)/3}
     2-The height of the hexagon is {2*HexVar}
-    3-The area of the hexagone is {(((Math.Sqrt(3)*HexVar*2)/3)*((Math.Sqrt(3)*HexVar*2)/3)*3)/2} 
+    3-The area of the hexagon is {(((Math.Sqrt(3)*HexVar*2)/3)*((Math.Sqrt(3)*HexVar*2)/3)*3)/2} 
     4-The apothem of the hexagon is {HexVar}"); 
     break;
   }
@@ -338,15 +338,15 @@ static void AlgebraCalc()
     double QuadraticA = Convert.ToDouble(Console.ReadLine());   
     double QuadraticB = Convert.ToDouble(Console.ReadLine());
     double QuadraticC = Convert.ToDouble(Console.ReadLine());
-     double Δ = (QuadraticB*QuadraticB) - 4*((QuadraticA)*(QuadraticC));
+     double Δ = (QuadraticB*QuadraticB) - 4*((QuadraticA)*(QuadraticC)); //obtain the delta for the formula
      
      Console.WriteLine($"Your Delta is {Δ}");
     if (Δ >= 0)
     {
-     double QuadraticRoot1 = (-QuadraticB+Math.Sqrt(Δ))/2*QuadraticA;
-     double QuadraticRoot2 = (-QuadraticB-Math.Sqrt(Δ))/2*QuadraticA;
-     if (Δ == 0) {Console.WriteLine($"Therefore, your X is {QuadraticRoot1}");}
-     else {Console.WriteLine($"Therefore, your X is either {QuadraticRoot1} or {QuadraticRoot2}");}
+     double QuadraticRoot1 = (-QuadraticB+Math.Sqrt(Δ))/2*QuadraticA; //in case the ± is +
+     double QuadraticRoot2 = (-QuadraticB-Math.Sqrt(Δ))/2*QuadraticA; //in case the ± is -
+     if (Δ == 0) {Console.WriteLine($"Therefore, your X is {QuadraticRoot1}");} // exception
+     else {Console.WriteLine($"Therefore, your X is either {QuadraticRoot1} (+) or {QuadraticRoot2} (-)");}
     }
   }
      QuadraticFormula();
@@ -354,8 +354,8 @@ static void AlgebraCalc()
     case "2":
      static void Log()
      {
-     double LogX = Convert.ToDouble(Console.ReadLine());   
-     double LogBase = Convert.ToDouble(Console.ReadLine());
+     double LogX = Convert.ToDouble(Console.ReadLine()); //the result of the base powered by the logarithm 
+     double LogBase = Convert.ToDouble(Console.ReadLine()); //the number to be powered by the logarithm to become X
       Console.WriteLine($"The Logarithm of {LogX} with a {LogBase} base is {Math.Log(LogX, LogBase)}");
      }
       Console.WriteLine("Write the Logarithm and the Base");
@@ -436,17 +436,17 @@ static void FunctionCalc()
 {
   Console.WriteLine("The function calculator works a little different from the others, please write the");
   Console.WriteLine("a, b and c of the format: f(x) = a(x²) + b(x) + c  , the system will discover the type");
-    double FA = Convert.ToDouble(Console.ReadLine());   
-    double FB = Convert.ToDouble(Console.ReadLine());
-    double FC = Convert.ToDouble(Console.ReadLine());
+    double FA = Convert.ToDouble(Console.ReadLine());
+    double FB = Convert.ToDouble(Console.ReadLine()); 
+    double FC = Convert.ToDouble(Console.ReadLine()); 
     static void Function(double A, double B, double C)
     {
-      if  (A is 0 && B is 0)
+      if  (A is 0 && B is 0) //case for function without x
       {
         Console.WriteLine("Your Function is Constant, therefore:");
         Console.WriteLine($"y = f(x) = {C}");
       }
-      else if (A is 0)
+      else if (A is 0) //case for function without x²
       {
         Console.WriteLine("Your Function is Linear, therefore:");
         Console.WriteLine($"y = f(x) = {B}x + {C}");
@@ -454,7 +454,7 @@ static void FunctionCalc()
         double X = Convert.ToDouble(Console.ReadLine());
         Console.WriteLine($"at x = {X}, the y coordinate is {(B*X) + C}");
       }
-      else if (A is not 0)
+      else if (A is not 0) //
       {
         Console.WriteLine("Your Function is Quadratic");
         Console.WriteLine($"y = f(x) = {A}x² + {B}x  + {C}");
