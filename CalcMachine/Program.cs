@@ -1,3 +1,4 @@
+using static System.Int32;
 
   static void programa()
   {
@@ -9,6 +10,7 @@
       3-Geometric
       4-Algebraic
       5-Function
+      6-Statistics WIP
       9-Special");
 
     string CalculatorCore = Console.ReadLine() ?? "1";
@@ -30,35 +32,19 @@
  case "5":
     FunctionCalc();
   break;
+ case "6":
+    StatCalc();
+  break;
  case "9":
     SpecialCalc();
   break;
     }
-    Console.ReadLine();
-  
-  programa();
-
-     Console.WriteLine("Do you want to use it again?");
-     Console.WriteLine(@"
-      1-Yes        
-      2-No");
-
-    string Special2 = Console.ReadLine() ?? "1"; 
-
-    switch(Special2)
-    {
-
-      case "1":
-      programa();
-      break;
-      default:
-      Console.WriteLine("Closing");
-      break;
-
-    } 
 
   }
+
 programa();
+
+UseAgain();
 
 static void ArithmeticCalc()
 {
@@ -97,7 +83,8 @@ static void ArithmeticCalc()
  default:
     Console.WriteLine("Invalid option");
     break;
-}
+
+ }
 }
 
 static void TrigonometricCalc()
@@ -500,12 +487,81 @@ string SpecialSpecial = Console.ReadLine() ?? "1";
   }
 }
 
+static void StatCalc()
+{
+ Console.WriteLine("Write how many elements the set of data has");
+ 
+  int HowLong = Convert.ToInt32(Console.ReadLine());
+
+  List<double> numberList = new List<double>() {};
+
+  for(int i = HowLong; i > 0; i--)
+{
+    Console.WriteLine($"({i} remaining!) Write your a number");
+    double y = Convert.ToDouble(Console.ReadLine());
+    numberList.Add(y);
+}
+numberList.Sort();
+double average = numberList.Average();
+numberList.Count();//gets the size of the List (to avoid cause problems by changing it or howlong)
+
+ double MeanDeviator() //Still not working
+{
+
+  double sum = 0;
+
+  double MeanDeviation = 0;
+  foreach (var item in numberList)
+  {
+   sum = (Math.Pow(item + average, 2))/numberList.Count;
+  }
+
+  MeanDeviation = sum;
+  return MeanDeviation;
+}
+
+Console.WriteLine($"the average of the {numberList.Count()} elements is: {average}");
+Console.WriteLine($"The smallest number of the set is: {numberList.First()}");
+Console.WriteLine($"And the largest number of the set is: {numberList.Last()}");
+Console.WriteLine($"The set is: {string.Join(" ", numberList)}");
+}
+
 static double RuleOf3(double upperleft, double upperright, double lowerleft)
 {
   double lowerright = (upperright*lowerleft)/upperleft;
   return (lowerright); 
 }
 
+static void ClearLine(int pedro)
+{
+    Console.SetCursorPosition(0, Console.CursorTop - pedro);
+    Console.Write(new string(' ', Console.WindowWidth));
+    Console.SetCursorPosition(0, Console.CursorTop);
+}
+
+static void UseAgain()
+    {
+    Console.ReadLine();
+  
+     Console.WriteLine("Do you want to use it again?");
+     Console.WriteLine(@"
+      1-Yes        
+      2-No");
+
+    string Special2 = Console.ReadLine() ?? "1"; 
+
+    switch(Special2)
+    {
+
+      case "1":
+      programa();
+      break;
+      default:
+      Console.WriteLine("Closing");
+      break;
+
+    } 
+  }
 /*Very special thanks to my friend Victória (EternalQuasar0206) for helping me with the refactoring
 the code during the early alpha and by guiding and explaining some of the features needed to implement 
 some of my ideas*/
