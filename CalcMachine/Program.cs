@@ -1,20 +1,19 @@
 using static System.Int32;
 
-  static void programa()
-  {
-        
+ static void programa()
+{       
     Console.WriteLine("Select the type of calculator you want to use");
     Console.WriteLine(@"
-      1-Arithmetic 
-      2-Trigonometric
-      3-Geometric
-      4-Algebraic
-      5-Function
-      6-Statistics WIP
-      9-Special");
+      1 - Arithmetic 
+      2 - Trigonometric
+      3 - Geometric
+      4 - Function
+      5 - Statistics
+      9 - Special");
 
     string CalculatorCore = Console.ReadLine() ?? "1";
     
+    Console.Clear();
     switch(CalculatorCore)
     {
  case "1":
@@ -27,12 +26,9 @@ using static System.Int32;
     PolygonCalc();
   break;
  case "4":
-    AlgebraCalc();
-  break;
- case "5":
     FunctionCalc();
   break;
- case "6":
+ case "5":
     StatCalc();
   break;
  case "9":
@@ -40,528 +36,436 @@ using static System.Int32;
   break;
     }
 
-  }
-
+}
 programa();
+//Main Modules Below
 
-UseAgain();
-
-static void ArithmeticCalc()
-{
- Console.WriteLine("Write The Two Numbers you wish to calculate");
- 
- double num1 = Convert.ToDouble(Console.ReadLine());
- double num2 = Convert.ToDouble(Console.ReadLine());
- 
- Console.WriteLine("Select the number of the wanted Operation");
- Console.WriteLine(@"
-   1 - Addition         (x+y) 
-   2 - Subtraction      (x-y)
-   3 - Multiplication   (x*y) 
-   4 - Division         (x/y)
-   5 - Exponentiation   (x^y)");
- string SpecialArit = Console.ReadLine() ?? "1";
-
-   switch(SpecialArit) 
-   {
- case "1":
-    double res = num1 + num2;
-    Console.WriteLine($"The Result of {num1} + {num2} is {res}");
-   break;
- case "2":
-    Console.WriteLine($"The Result of {num1} - {num2} is {num1 - num2}");
-    break;
- case "3":
-    Console.WriteLine($"The Result of {num1} * {num2} is {num1 * num2}");
-    break;
- case "4":
-    Console.WriteLine($"The Result of {num1} / {num2} is {num1 / num2}");
-    break;
- case "5":
-    Console.WriteLine($"The Result of {num1} ^ {num2} is {Math.Pow(num1, num2)}");
-    break;
- default:
-    Console.WriteLine("Invalid option");
-    break;
-
- }
-}
-
-static void TrigonometricCalc()
-{
-   Console.WriteLine("Write the value of the angle");
-   int num1 = Convert.ToInt32(Console.ReadLine());
-   Console.WriteLine("Select the number of the wanted trigonometric function");
-   Console.WriteLine(@"
-     1 - Sine (Sin)       
-     2 - Cosine (Cos)
-     3 - Tangent (Tan)
-     4 - Cosecant (Cossec)
-     5 - Secant (Sec)
-     6 - Cotangent (Cotan)
-     7 - All");
-   string SpecialTrig = Console.ReadLine() ?? "1";
-   double radian3 = (num1 * (Math.PI)) / 180; //converts the angle to radians
-   
-   switch(SpecialTrig) 
-   {
- case "1":
-   Console.WriteLine($"The Sine of {num1} is {Math.Sin(radian3)}");
-   break;
- case "2":
-   Console.WriteLine($"The Cosine of {num1} is {Math.Cos(radian3)}");
-   break;
- case "3":
-   Console.WriteLine($"The Tangent of {num1} is {Math.Tan(radian3)}");
-   break;
- case "4":
-   Console.WriteLine($"The Cosecant of {num1} is {1/(Math.Sin(radian3))}");
-   break;
- case "5":
-   Console.WriteLine($"The Secant of {num1} is {1/(Math.Cos(radian3))}");
-   break;
- case "6":
-   Console.WriteLine($"The Coangent of {num1} is {1/(Math.Tan(radian3))}");
-   break;
-       
-   case "7":
-   Console.WriteLine($"The Sine of {num1} is {Math.Sin(radian3)}");
-   Console.WriteLine($"The Cosine of {num1} is {Math.Cos(radian3)}");
-   Console.WriteLine($"The Tangent of {num1} is {Math.Tan(radian3)}");
-   Console.WriteLine($"The Cosecant of {num1} is {1/(Math.Sin(radian3))}");
-   Console.WriteLine($"The Secant of {num1} is {1/(Math.Cos(radian3))}");
-   Console.WriteLine($"The Coangent of {num1} is {1/(Math.Tan(radian3))}");
-   break;
- }
-}
-
-static void PolygonCalc()
-{
-  Console.WriteLine("Select the type of Polygon you want to calculate");
-  Console.WriteLine(@"
-    1 - Square
-    2 - Rectangle
-    3 - Triangle (Equilateral)
-    4 - Triangle (Isoceles)
-    5 - Circle
-    6 - Hexagon
-    ");
- string SpecialGeo = Console.ReadLine() ?? "1"; 
- switch (SpecialGeo)
+ static void ArithmeticCalc()
  {
-   case "1":
-   static void SquareCalc()
-   {
-   Console.WriteLine("Write the length of the Side");
-    double Side = Convert.ToDouble(Console.ReadLine());
-   Console.WriteLine(@$"
-    1-The Square has a Side of {Side}
-    2-The Square has a area of {Side*Side}
-    3-The Square has a diagonal of {Math.Sqrt(2*(Side*Side))}
-    4-The Square has a apothem of {Side/2}
-    ");
-   }
-   SquareCalc();
-   break;
-   case "2":
-   static void RectangleCalc()
-   {
-   Console.WriteLine("Write the length and the height of the Retangle");
-    double Length = Convert.ToDouble(Console.ReadLine());   
-    double Height = Convert.ToDouble(Console.ReadLine()); 
-   Console.WriteLine(@$"
-    1-The Rectangle has a length of {Length} and a height of {Height}
-    2-The Rectangle has a area of {Length*Height}
-    3-The Rectangle has a diagonal of {Math.Sqrt((Height*Height)+(Length*Length))}");  
-   }
-   RectangleCalc();
-   break;
-   case "3":
-   static void EQCalc()
-   {
-   Console.WriteLine("Write the known length (Side or Height)");
-    double EQVar = Convert.ToDouble(Console.ReadLine());
-   Console.WriteLine(@"Is it the length of the Side or the Height ?
-    1 - Side
-    2 - Height");
-   string EQSwitcher = Console.ReadLine() ?? "1";
-   switch (EQSwitcher)
-   {
-   case "1":
-    static void EQSide(double num1)
-    {
-    Console.WriteLine(@$"
-    1-The length of the side is {num1}
-    2-The height of the triangle is {(Math.Sqrt(3)*(num1))/2}
-    3-The area of the triangle is {(Math.Sqrt(3)*(num1*num1)/4)}  
-    4-The apothem of the triangle is {(Math.Sqrt(3)*(num1))/6} ");           
-    }
-     EQSide(EQVar);
-    break;
-   case "2":
-    static void EQHeight(double num1)
-    {
-    Console.WriteLine(@$"
-    1-The height of the triangle is {num1}
-    2-The length of the side is {(2*(Math.Sqrt(3)*num1))/3}
-    3-The area of the triangle is {(((2*(Math.Sqrt(3)*num1))/3)*(num1))/2} 
-    4-The apothem of the triangle is {num1/3}"); 
-    }
-    EQHeight(EQVar);
-    break;
-   }        
-}
-    EQCalc();
-  break;
- case "4":
-  static void IsoCalc()
+ bool onoff = true;
+ while (onoff is true)
   {
-  Console.WriteLine("Write the length of the base and the legs");
-    double IsoBase = Convert.ToDouble(Console.ReadLine());
-    double IsoLength = Convert.ToDouble(Console.ReadLine());
-    Console.WriteLine(@$"
-    1-The height of the triangle is {Math.Sqrt((IsoLength*IsoLength)-(IsoBase*IsoBase)/4)}
-    2-The area of the triangle is {(IsoBase/4)*(Math.Sqrt(4*(IsoLength*IsoLength)-(IsoBase*IsoBase)))}");
-  }
-  IsoCalc();
-  break;
- case "5":
-  static void CircCalc()
-  {
-  Console.WriteLine("Write the known value of the circle (can be Radius, Circunference or Area)");
-  double CircVar = Convert.ToDouble(Console.ReadLine()); 
-   Console.WriteLine(@"Write 
-    1 - Radius
-    2 - Circunference
-    3 - Area");
-    string CircSwitcher = Console.ReadLine() ?? "1";
-    switch (CircSwitcher)
-    {
-      case "1":
-     Console.WriteLine(@$"
-    1-The Radius is {CircVar}
-    2-The Diameter is {CircVar*2}
-    3-The length of the Circunference is {(2*Math.PI)*CircVar}
-    4-The Area of the Circle is {Math.PI*(CircVar*CircVar)}");          
-      break;
-      case "2":
-       
-     Console.WriteLine(@$"
-    1-The Radius is {CircVar/(2*(Math.PI))}
-    2-The Diameter is {CircVar/(Math.PI)}
-    3-The length of the Circunference is {CircVar}
-    4-The Area of the Circle is {Math.PI*((CircVar/(2*(Math.PI)))*(CircVar/(2*(Math.PI))))}");
-                 
-      break;
-      case "3":
-     Console.WriteLine(@$"
-    1-The Radius is {Math.Sqrt(CircVar/Math.PI)}
-    2-The Diameter is {2*(Math.Sqrt(CircVar/Math.PI))}
-    3-The length of the Circunference is {2*(Math.Sqrt(CircVar/Math.PI))*Math.PI}
-    4-The Area of the Circle is {CircVar}");        
-      break;
-  }
-    }
-  CircCalc();
-  break;
- case "6":
-  static void HexCalc()
-  {
-  Console.WriteLine("Write the length of the known value (can be the Side, the Height or the Apothem)");
-  double HexVar = Convert.ToDouble(Console.ReadLine()); 
-   Console.WriteLine(@"Is it the length of the Side, Height or the Apothem
-    1 - Side
-    2 - Height
-    3 - Apothem");
-  string HexSideOrHeight = Console.ReadLine() ?? "1";  
-  switch (HexSideOrHeight)
-  {
-    case "1":
-    Console.WriteLine(@$"
-    1-The side of the hexagon is {HexVar}
-    2-The height of the hexagon is {(Math.Sqrt(3)*HexVar)}
-    3-The area of the hexagon is {(Math.Sqrt(3)*((HexVar*HexVar)*3))/2} 
-    4-The apothem of the hexagon is {(Math.Sqrt(3)*HexVar)/2}"); 
-    break;
-    case "2":
-    Console.WriteLine(@$"
-    1-The side of the hexagon is {(Math.Sqrt(3)*HexVar)/3}
-    2-The height of the hexagon is {HexVar}
-    3-The area of the hexagon is {((Math.Sqrt(3)*((Math.Sqrt(3))*(HexVar))/3)*(((Math.Sqrt(3))*(HexVar))))/2} 
-    4-The apothem of the hexagon is {HexVar/2}"); 
-    break;
-    case "3":
-    Console.WriteLine(@$"
-    1-The side of the hexagon is {(Math.Sqrt(3)*HexVar*2)/3}
-    2-The height of the hexagon is {2*HexVar}
-    3-The area of the hexagon is {(((Math.Sqrt(3)*HexVar*2)/3)*((Math.Sqrt(3)*HexVar*2)/3)*3)/2} 
-    4-The apothem of the hexagon is {HexVar}"); 
-    break;
-  }
- }
-  HexCalc();
-  break;    
- }
 
-}
+  Console.WriteLine("How many operations will happen (type 0 if you want to do the max number of operations)");
+int StdHowlong = Int32.MaxValue;
+int HowLong = Convert.ToInt32(Console.ReadLine());
+  if (HowLong is 0) {HowLong = StdHowlong;}
 
-static void AlgebraCalc()
+  Console.WriteLine(@"The following symbols represent the operations, keep that in mind for later
+ 
+  + - Addition         (x+y) 
+  - - Subtraction      (x-y)
+  X - Multiplication   (x*y) 
+  / - Division         (x/y)
+  ^ - Exponentiation   (x^y)");
+
+  List<double> InumberList = new List<double>() {}; //Inputs the user-selected number
+  List<double> LogList = new List<double>() {}; //List for the log
+  List<string> operationList = new List<string>() {}; //Lists the operations
+  List<double> OnumberList = new List<double>() {}; //Output of the Input
+int i = HowLong+1;
+
+for(i = HowLong+1; i > HowLong; i--) //Bootstrap for getting the first Item of the Input
 {
+  Console.WriteLine($"Write your first number"); 
+ double Inum = Convert.ToDouble(Console.ReadLine()); //Gets the first Number
+  InumberList.Add(Inum); 
+  LogList.Add(Inum);
+}
+
+for(i = HowLong-1; i > 0; i--) // i = Howlong-1 accounting for the first number being added by the bootstrap
+{
+  Console.WriteLine("Write the opeartion");
+ string? Iop = Convert.ToString(Console.ReadLine());
+  if (Iop is not null) {operationList.Add(Iop);} //Guarantees nullable exception will not happen
+  ClearLine(2, 0);
+
+  Console.WriteLine($"({i} remaining!) Write your number");
+ double Inum = Convert.ToDouble(Console.ReadLine()); //Gets the following numbers 
+  ClearLine(2, 0);
+  
+  InumberList.Add(Inum);
+  LogList.Add(Inum);  
+  
+ double Onum = 0; //just declaring Onum beforehand to avoid errors
+  if (Iop is not null) {Onum = OperationSwitch(Iop, InumberList[^1], InumberList[^2]);} 
+  // ^ Receives the values to be used in the operations
+ double OperationSwitch(string OpSwitch, double num1, double num2)
+  
+ {
+  if (OnumberList is not null)
+  {
+   switch(OpSwitch)
+    {
+      case "+":     
+      Onum = num2+num1;
+      OnumberList.Add(Onum);
+      break;
+      case "-":     
+      Onum = num2-num1;
+      OnumberList.Add(Onum);
+      break;
+      case "X":     
+      Onum = num2*num1;
+      OnumberList.Add(Onum);
+      break;     
+      case "/":     
+      Onum = num2/num1;
+      OnumberList.Add(Onum);
+      break;
+      case "^":     
+      Onum = Math.Pow(num2, num1);
+      OnumberList.Add(Onum);
+      break;
+    }
+  }
+   return 0;
+ }
+    
+  InumberList[^1] = OnumberList[^1];
+}
+ int Log()
+{
+if (i <= 0 && OnumberList is not null)
+{
+Console.WriteLine($"The final result is: {OnumberList[^1]}");
+
+
+Console.WriteLine($"The inputed  numbers are:  {string.Join(" ", LogList)}");
+Console.WriteLine($"The inputed operations are: {string.Join(" ", operationList)}");
+Console.WriteLine($"The outputed numbers are:    {string.Join(" ", OnumberList)}");
+
+}
+return 0;
+}
+Log();
+
+  Console.WriteLine("Do you want to use it again ? (Y/N) (type 0 to go back to the opening menu)");
+  string? YN = Convert.ToString(Console.ReadLine());
+  if (YN is not null && YN is "Y") {onoff = true;}
+  if (YN is not null && YN is "N") {onoff = false;}
+  if (YN is "0") {programa();}
+  }
+ }
+
+ static void TrigonometricCalc()
+ {
+ bool onoff = true;
+ while (onoff is true)
+  {
+  Console.WriteLine("Write your angle (in degrees)");
+ double angle = Convert.ToDouble(Console.ReadLine());
+ double radian = (angle * (Math.PI)) / 180; //converts the degrees to radians
+   ClearLine(2, 0);
+  Console.WriteLine($"{angle}° in radians is: {radian}");
+
+  Console.WriteLine($"The Sine of {angle}° is {Math.Sin(radian)}");
+  Console.WriteLine($"The Cosine of {angle}° is {Math.Cos(radian)}");
+  Console.WriteLine($"The Tangent of {angle}° is {Math.Tan(radian)}");
+  Console.WriteLine($"The Cosecant of {angle}° is {1/(Math.Sin(radian))}");
+  Console.WriteLine($"The Secant of {angle}° is {1/(Math.Cos(radian))}");
+  Console.WriteLine($"The Cotangent of {angle}° is {1/(Math.Tan(radian))}");
+
+  Console.WriteLine("Do you want to use it again ? (Y/N) (type 0 to go back to the opening menu)");
+ string? YN = Convert.ToString(Console.ReadLine());
+  if (YN is not null && YN is "Y") {onoff = true;}
+  if (YN is not null && YN is "N") {onoff = false;}
+  if (YN is "0") {programa();}
+  }
+ }
+
+ static void PolygonCalc()
+ {
+ bool onoff = true; //looping mechanism
+ while (onoff is true)
+  {
+
+  Console.WriteLine("Is your Polygon a Circle? (Y/N)");
+ string? regular = "" ?? "Y";
+  regular = Console.ReadLine();
+  switch(regular)
+  {
+  case "Y":
+    Console.WriteLine("How many sides does it have?");
+   int n = Convert.ToInt32(Console.ReadLine()); //using the n-gon as guideline
+
+   double AngleIn = (180*(n-2))/n;
+   double AngleEx = 360 - AngleIn;
+   double RadianIn = (AngleIn * (Math.PI)) / 180;
+   double area = 0;
+   double side = 0;
+   double apothem = 0;
+    Console.WriteLine("Write the value of the known value and then what it is");
+    Console.WriteLine("(supported properties are: side, apothem, area)");
+   double value  = Convert.ToDouble(Console.ReadLine());
+   string? property = "" ?? "side length";
+    property = Console.ReadLine();
+    
+  if (property == "apothem")
+    {area = Math.Tan(Math.PI/n)*(n*Math.Pow(value,2)); side = (2*value)/Math.Tan(RadianIn/2); apothem = value;}
+
+  if (property == "side")
+    {apothem = (value*(Math.Tan(RadianIn/2)/2)); area = ((value*n)*apothem); side = value;}
+
+  if (property == "area")
+    {apothem = Math.Sqrt(value*Math.Tan(RadianIn/2)/n);side = (2*apothem)/Math.Tan(RadianIn/2); area = value;}
+
+    Console.WriteLine($"The area is: {area}");
+    Console.WriteLine($"The side is: {side}");
+    Console.WriteLine($"The apothem is: {apothem}");
+    Console.WriteLine($"The polyhon has {n} sides");
+    Console.WriteLine($"The number of diagonals is {0.5*(n*(n-3))}");
+    Console.WriteLine($"Each of the internal angles has {AngleIn}°, totalizing {AngleIn*n} degrees");
+    Console.WriteLine($"In addition, the external angle has {AngleEx}° totalizing {AngleEx*n}°");
+   break;
+  case "N":
+   Console.WriteLine("Write the value and what it is (Radius, Circunference, Area)");
+    double  Cvalue    = Convert.ToDouble(Console.ReadLine());
+    string? Cproperty = Convert.ToString(Console.ReadLine());
+    double  Carea     = 0;
+    double  Clength   = 0;
+    double  Cradius   = 0;
+  if (Cproperty == "Radius")
+  {Cradius = Cvalue; Clength = (2*Math.PI)*Cvalue; Carea = (Math.PI*(Cvalue*Cvalue));}
+  if (Cproperty == "Circunference")
+  {Clength = Cvalue; Cradius = Clength/(2*(Math.PI)); Carea = (Math.PI*(Cradius*Cradius));}
+  if (Cproperty == "Area")
+  {Carea = Cvalue; Cradius = Math.Sqrt(Cvalue/Math.PI); Clength = (2*Math.PI)*Cradius;}
+   
+  Console.WriteLine($"The radius is {Cradius}");
+  Console.WriteLine($"The circunference is {Clength}");
+  Console.WriteLine($"The area is {Carea}");
+  break;
+  }
+    Console.WriteLine("Do you want to use it again ? (Y/N) (type 0 to go back to the opening menu)");
+   string? YN = Convert.ToString(Console.ReadLine());
+    if (YN is not null && YN is "Y") {onoff = true;}
+    if (YN is not null && YN is "N") {onoff = false;}
+    if (YN is "0") {programa();}
+  }
+ }
+ 
+ static void FunctionCalc()
+ {
+ bool onoff = true; //looping mechanism
+ while (onoff is true)
+  {
+    double a = 0; double b = 0; double c = 0; double d = 0; double x = 0; double fx = 0;
+    Console.WriteLine("Which exponent/degree is the highest on your function ? (3 / 2 / 1)");
+    string? PowSwitch = Convert.ToString(Console.ReadLine());
+    
+    switch (PowSwitch)
+    {
+      case "3":      
+    Console.WriteLine("Your function is on the format: f(x) = ax³ + bx² + cx + d");
+    Console.WriteLine("Input, respectivelly, the values of a, b, c and d");
+     a = Convert.ToDouble(Console.ReadLine());
+     b = Convert.ToDouble(Console.ReadLine());
+     c = Convert.ToDouble(Console.ReadLine());
+     d = Convert.ToDouble(Console.ReadLine());
+
+
+    XorY();
+     void Cubic()
+     {
+      if (fx==0)
+      {
+       fx = a*(x*x*x) + b*(x*x) + c*(x) + d;
+       Console.WriteLine($"the function f(x) = {a}x³ + {b}x² + {c}x + {d} at f({x})is: {fx}");
+      }
+      if (x==0)
+      {
+       x = 0;
+       Console.WriteLine($"To be added");  
+      }
+
+     }
+      Cubic();
+      break;
+
+      case "2":
+    Console.WriteLine("Your function is on the format: f(x) = aX² + bX + c");
+    Console.WriteLine("Input, respectivelly, the values of a, b and c");
+     a = Convert.ToDouble(Console.ReadLine());
+     b = Convert.ToDouble(Console.ReadLine());
+     c = Convert.ToDouble(Console.ReadLine());
+
+     XorY();
+     void Quadratic()
+     {
+      if (fx==0)
+      {
+        fx = a*(x*x) + b*(x) + c;
+        Console.WriteLine($"the function f(x) = {a}x² + {b}x + {c} at f({x})is: {fx}");
+      }
+      if (x==0)
+      {
+        double Δ  = (b*b)-(4*a*c);
+        double X1 = (-b + Δ)/(2*a);
+        double X2 = (-b + Δ)/(2*a);
+        Console.WriteLine($"the two roots for the function f(x) = {a}x² + {b}x + {c} at f(x) = {fx} are : {X1} and {X2}");     
+      }
+
+     }
+      Quadratic();
+      break;
+
+      case "1":
+    Console.WriteLine("Your function is on the format: f(x) = aX + b");
+    Console.WriteLine("Input, respectivelly, the values of a and b");
+     a = Convert.ToDouble(Console.ReadLine());
+     b = Convert.ToDouble(Console.ReadLine());
+
+     XorY();
+     void Linear()
+     {
+      if (fx==0)
+      {
+        fx = a*(x) + b;
+        Console.WriteLine($"the function f(x) = {a}x + {b} at f({x})is: {fx}");
+      }
+      if (x==0)
+      {
+        x = (fx-b)/a;
+        Console.WriteLine($"the x of the function f(x) = {a}x + {b} at f(x) = {fx} is: {x}");
+      }
+
+     }
+      Linear();
+      break;
+    }
+    void XorY()
+    {
+      Console.WriteLine("Do you know the x or the f(x) ?");
+      string? YorX = Convert.ToString(Console.ReadLine());
+      switch (YorX)
+      {
+        case "x":
+        Console.WriteLine("Write your x");
+        x = Convert.ToDouble(Console.ReadLine());
+        break;
+
+        case "f(x)":
+        Console.WriteLine("Write your f(x)");
+        fx = Convert.ToDouble(Console.ReadLine());
+        break;
+      }
+    }
+
+
+    Console.WriteLine("Do you want to use it again ? (Y/N) (type 0 to go back to the opening menu)");
+   string? YN = Convert.ToString(Console.ReadLine());
+    if (YN is not null && YN is "Y") {onoff = true;}
+    if (YN is not null && YN is "N") {onoff = false;}
+    if (YN is "0") {programa();}
+  }
+ }
+
+ static void StatCalc()
+ {
+ bool onoff = true; //looping mechanism
+ while (onoff is true)
+  {
+
+    Console.WriteLine("Write the number of elements of the dataset");
+   int HowLong = Convert.ToInt32(Console.ReadLine());  
+    List<double> dataSet = new List<double>(){};
+
+  for (int i = HowLong; i>0; i--) //loop for getting the elements of the statistics
+   {
+      Console.WriteLine($"({i} remaining!) Write your number");
+     double y = Convert.ToDouble(Console.ReadLine());
+      dataSet.Add(y);
+   }
+    dataSet.Sort();
+   double average = dataSet.Average();       //gets the average of the dataset
+   double median = dataSet[dataSet.Count/2]; //gets the median of the dataset
+
+   double MeanDeviator(int bessel)
+   {
+    double sum = 0; //sets standard sum
+    double meandev = 0; //sets standard mean deviation
+    foreach(var item in dataSet)
+     {
+      sum += Math.Pow((item - average),2);
+     }
+     meandev = Math.Sqrt((sum)/(dataSet.Count - bessel));
+    return meandev;
+   }
+
+    /* */ dynamic mode = dataSet.GroupBy(i=>i).OrderByDescending(grp=>grp.Count())
+    /* */                   .Select(grp=>grp.Key).First();
+
+    if (dataSet[0] != dataSet[1]) {mode = "inexistent";}
+
+    Console.WriteLine($"For the set of data {string.Join(" ", dataSet)}:");
+
+    Console.WriteLine($"The average is {average}");
+    Console.WriteLine($"The mode is {mode}");
+    Console.WriteLine($"The median is {median}");
+    Console.WriteLine($"The mean deviation is {MeanDeviator(0)} ({MeanDeviator(1)} with Bessel's correction)");
+    Console.WriteLine($"The largest number is {dataSet[^1]}");
+    Console.WriteLine($"The smallest number is {dataSet[0]}");
+
+    
+
+    Console.WriteLine("Do you want to use it again ? (Y/N) (type 0 to go back to the opening menu)");
+   string? YN = Convert.ToString(Console.ReadLine());
+    if (YN is not null && YN is "Y") {onoff = true;}
+    if (YN is not null && YN is "N") {onoff = false;}
+    if (YN is "0") {programa();}
+  }
+ }
+
+ static void SpecialCalc()
+ {
   Console.WriteLine("Select the number of the wanted function");
   Console.WriteLine(@"
-    1-Quadratic Formula     (a(X²) + b(X) + c = 0)
-    2-Logarithm             (LogyX)
-    3-Pythagorean Theorem   (A² + B² = C²)
-    4-Distance of Two Points
-    5-Midpoint Formula
-    6-Slope");
-  string SpecialAlgebra = Console.ReadLine() ?? "1";   
-  switch (SpecialAlgebra)    
-   {
-     case "1":
-     static void QuadraticFormula()
+  1 - Pythagorean Theorem
+  2 - Logarithm");
+  string? Switcher = Convert.ToString(Console.ReadLine());
+
+  switch (Switcher)
   {
-     Console.WriteLine("Write the a, b and c of your a(X²) + b(X) + c = 0 expression");
-    double QuadraticA = Convert.ToDouble(Console.ReadLine());   
-    double QuadraticB = Convert.ToDouble(Console.ReadLine());
-    double QuadraticC = Convert.ToDouble(Console.ReadLine());
-     double Δ = (QuadraticB*QuadraticB) - 4*((QuadraticA)*(QuadraticC)); //obtain the delta for the formula
-     
-     Console.WriteLine($"Your Delta is {Δ}");
-    if (Δ >= 0)
-    {
-     double QuadraticRoot1 = (-QuadraticB+Math.Sqrt(Δ))/2*QuadraticA; //in case the ± is +
-     double QuadraticRoot2 = (-QuadraticB-Math.Sqrt(Δ))/2*QuadraticA; //in case the ± is -
-     if (Δ == 0) {Console.WriteLine($"Therefore, your X is {QuadraticRoot1}");} // exception
-     else {Console.WriteLine($"Therefore, your X is either {QuadraticRoot1} (+) or {QuadraticRoot2} (-)");}
-    }
-  }
-     QuadraticFormula();
-     break;
+    case "1":
+    Console.WriteLine("Do you know the hipotenuse? (Y/N)");
+    string? pytSwitcher = Convert.ToString(Console.ReadLine());
+    double leg1 = 0; double leg2 = 0; double hip = 0;
+      switch (pytSwitcher)
+      {
+        case "Y":
+         Console.WriteLine("Write, respectively, the values of the known leg and the hipotenuse");
+          leg1 = Convert.ToDouble(Console.ReadLine());
+          hip  = Convert.ToDouble(Console.ReadLine());
+          leg2 = Math.Sqrt((hip*hip) - (leg1*leg1));
+
+         Console.WriteLine($"The second leg of {leg1}² + leg² = {hip}² is: {leg2}");
+                  
+        break;
+
+        case "N":
+         Console.WriteLine("Write the value of the two legs");
+          leg1 = Convert.ToDouble(Console.ReadLine());
+          leg2 = Convert.ToDouble(Console.ReadLine());
+          hip = Math.Sqrt((leg1*leg1)+(leg2*leg2));
+
+         Console.WriteLine($"The hipotenuse of {leg1}² + {leg2}² = hip² is: {hip}");
+        break;
+      }
+    break;
+
     case "2":
-     static void Log()
-     {
+    Console.WriteLine("Write the Logarithm and the Base");
      double LogX = Convert.ToDouble(Console.ReadLine()); //the result of the base powered by the logarithm 
      double LogBase = Convert.ToDouble(Console.ReadLine()); //the number to be powered by the logarithm to become X
-      Console.WriteLine($"The Logarithm of {LogX} with a {LogBase} base is {Math.Log(LogX, LogBase)}");
-     }
-      Console.WriteLine("Write the Logarithm and the Base");
-     Log();
-     break;
-    case "3":
-     static void Pythagoras()
-     {
-      Console.WriteLine("Do you know the B or the C ?");
-      Console.WriteLine(@"
-      1-B
-      2-C");
-      string Pyt = Console.ReadLine() ?? "1";   
-      switch (Pyt)
-      {
-       case "1":
-         Console.WriteLine("Write the A and B values");
-     double PytA = Convert.ToDouble(Console.ReadLine());   
-     double PytB = Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine($"The C hypotenuse of the expression is {Math.Sqrt(PytA*PytA + PytB*PytB)}");           
-        break;
-       case "2":
-         Console.WriteLine("Write the A and C values");
-     double PythA = Convert.ToDouble(Console.ReadLine());   
-     double PythC = Convert.ToDouble(Console.ReadLine()); 
-        Console.WriteLine($"The B Leg of the expression is {Math.Sqrt(PythC*PythC - PythA*PythA)}");
-        break;
-      }
-     }
-     Pythagoras();
-     break;
-    case "4":
-     static void TwoPoints()
-     {
-      Console.WriteLine("Determine the X and Y coordinates of the first point");
-       double Dif_1stX = Convert.ToDouble(Console.ReadLine());
-       double Dif_1stY = Convert.ToDouble(Console.ReadLine());
-      Console.WriteLine("Now, do the same for the second point");
-       double Dif_2ndX = Convert.ToDouble(Console.ReadLine());
-       double Dif_2ndY = Convert.ToDouble(Console.ReadLine());
-      Console.WriteLine(@$"The distance between the two points is:
-      {Math.Sqrt((Dif_2ndX - Dif_1stX)*(Dif_2ndX - Dif_1stX) + (Dif_2ndY - Dif_1stY)*(Dif_2ndY - Dif_1stY))}");  
-     }
-     TwoPoints();
-     break;
-    case "5":
-     static void Midpoint()
-     {
-      Console.WriteLine("Determine the X and Y coordinates of the first point");
-       double Mid_1stX = Convert.ToDouble(Console.ReadLine());
-       double Mid_1stY = Convert.ToDouble(Console.ReadLine());
-      Console.WriteLine("Now, do the same for the second point");
-       double Mid_2ndX = Convert.ToDouble(Console.ReadLine());
-       double Mid_2ndY = Convert.ToDouble(Console.ReadLine());  
-      Console.WriteLine($"The midpoint X is  {(Mid_1stX+Mid_2ndX)/2}");
-      Console.WriteLine($"The midpoint Y is: {(Mid_1stY+Mid_2ndY)/2}"); 
-     }
-     Midpoint();  
-     break;
-    case "6":
-     static void Slope()
-     {
-      Console.WriteLine("Determine the highest X and Y of the line");
-       double SlopeMaxX = Convert.ToDouble(Console.ReadLine());
-       double SlopeMaxY = Convert.ToDouble(Console.ReadLine());
-      Console.WriteLine("Now, do the same for the lowest X amd Y");
-       double SlopeMinX = Convert.ToDouble(Console.ReadLine());
-       double SlopeMinY = Convert.ToDouble(Console.ReadLine()); 
-       
-      Console.WriteLine($"the incline is of a ratio of {(SlopeMaxY-SlopeMinY)/(SlopeMaxX-SlopeMinX)}");
-     }
-     Slope();
-     break;         
-   }
-}
-
-static void FunctionCalc()
-{
-  Console.WriteLine("The function calculator works a little different from the others, please write the");
-  Console.WriteLine("a, b and c of the format: f(x) = a(x²) + b(x) + c  , the system will discover the type");
-    double FA = Convert.ToDouble(Console.ReadLine());
-    double FB = Convert.ToDouble(Console.ReadLine()); 
-    double FC = Convert.ToDouble(Console.ReadLine()); 
-    static void Function(double A, double B, double C)
-    {
-      if  (A is 0 && B is 0) //case for function without x
-      {
-        Console.WriteLine("Your Function is Constant, therefore:");
-        Console.WriteLine($"y = f(x) = {C}");
-      }
-      else if (A is 0) //case for function without x²
-      {
-        Console.WriteLine("Your Function is Linear, therefore:");
-        Console.WriteLine($"y = f(x) = {B}x + {C}");
-        Console.WriteLine("Which is your x?");
-        double X = Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine($"at x = {X}, the y coordinate is {(B*X) + C}");
-      }
-      else if (A is not 0) //
-      {
-        Console.WriteLine("Your Function is Quadratic");
-        Console.WriteLine($"y = f(x) = {A}x² + {B}x  + {C}");
-        Console.WriteLine("Which is your x?");
-        double X = Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine($"at x = {X}, the y coordinate is {(A*(X*X))+(B*X)+C}");
-        double XVert = -1*(B/(2*A));
-        double YVert = -1*(((B*B)-4*(A*C))/4*A); 
-        Console.WriteLine($"And, by consequence, the X Vertex is {XVert} and the Y Vertex is {YVert}");
-      }
-    }
-    Function(FA, FB, FC);
-}
-
-static void SpecialCalc()
-{
-  Console.WriteLine("Select the number of the wanted function");
-  Console.WriteLine(@"
-    1-Inverse (1/x)
-    2-Rule of 3(a->c)
-               (b->x)");
-string SpecialSpecial = Console.ReadLine() ?? "1";       
-  switch(SpecialSpecial)
-  {
-    case "1":
-  Console.WriteLine("Write the Number you will use");
-  
-  double num4 = Convert.ToDouble(Console.ReadLine());
-  
-    Console.WriteLine($"The Inverse of {num4} is {1f/num4}");
-    break;
-    case "2":
-    Console.WriteLine("Write the A, B and C of the rule of 3 as in the format shown in the menu");
-    double Rule3A = Convert.ToDouble(Console.ReadLine());
-    double Rule3B = Convert.ToDouble(Console.ReadLine());
-    double Rule3C = Convert.ToDouble(Console.ReadLine());
-    Console.WriteLine(@$"The Rule of 3 is {Rule3A}----->{Rule3C}
-             {Rule3B}----->{RuleOf3(Rule3A, Rule3B, Rule3C)}");
-    break;
-    default:
-    Console.WriteLine("Invalid Operation");
+    Console.WriteLine($"The Logarithm of {LogX} with a {LogBase} base is {Math.Log(LogX, LogBase)}");
     break;
   }
-}
-
-static void StatCalc()
-{
- Console.WriteLine("Write how many elements the set of data has");
- 
-  int HowLong = Convert.ToInt32(Console.ReadLine());
-
-  List<double> numberList = new List<double>() {};
-
-  for(int i = HowLong; i > 0; i--)
-{
-    Console.WriteLine($"({i} remaining!) Write your a number");
-    double y = Convert.ToDouble(Console.ReadLine());
-    numberList.Add(y);
-}
-numberList.Sort();
-double average = numberList.Average();
-numberList.Count();//gets the size of the List (to avoid cause problems by changing it or howlong)
-
- double MeanDeviator() //Still not working
-{
-
-  double sum = 0;
-
-  double MeanDeviation = 0;
-  foreach (var item in numberList)
-  {
-   sum = (Math.Pow(item + average, 2))/numberList.Count;
-  }
-
-  MeanDeviation = sum;
-  return MeanDeviation;
-}
-
-Console.WriteLine($"the average of the {numberList.Count()} elements is: {average}");
-Console.WriteLine($"The smallest number of the set is: {numberList.First()}");
-Console.WriteLine($"And the largest number of the set is: {numberList.Last()}");
-Console.WriteLine($"The set is: {string.Join(" ", numberList)}");
-}
-
-static double RuleOf3(double upperleft, double upperright, double lowerleft)
-{
-  double lowerright = (upperright*lowerleft)/upperleft;
-  return (lowerright); 
-}
-
-static void ClearLine(int pedro)
+ }
+ //Global Functions Below
+ static void ClearLine(int pedro, int joao)
 {
     Console.SetCursorPosition(0, Console.CursorTop - pedro);
     Console.Write(new string(' ', Console.WindowWidth));
-    Console.SetCursorPosition(0, Console.CursorTop);
+    Console.SetCursorPosition(0, Console.CursorTop - joao);
 }
-
-static void UseAgain()
-    {
-    Console.ReadLine();
-  
-     Console.WriteLine("Do you want to use it again?");
-     Console.WriteLine(@"
-      1-Yes        
-      2-No");
-
-    string Special2 = Console.ReadLine() ?? "1"; 
-
-    switch(Special2)
-    {
-
-      case "1":
-      programa();
-      break;
-      default:
-      Console.WriteLine("Closing");
-      break;
-
-    } 
-  }
-/*Very special thanks to my friend Victória (EternalQuasar0206) for helping me with the refactoring
-the code during the early alpha and by guiding and explaining some of the features needed to implement 
-some of my ideas*/
