@@ -1,3 +1,11 @@
+-Beta 2.0.1
+-Rewrote the entire code;
+-Added more functionalities on the Statistics Module and made it more precise;
+-Reworked Arithmetic Module to accept multiple opeartions in sequence;
+-Reworked Trigonometric Module to make it lighter;
+-Reworked Geometric Module to make it accept any regular polygon;
+-Removed Algebra Module because linear algebra is too hard of a hassle to mantain;
+
 -Beta 1.2.1
 -Added Statistics Module for measuring the highest, lowest and the mean of a user-selected set of numbers;
 
