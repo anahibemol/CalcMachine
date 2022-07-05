@@ -1,11 +1,20 @@
 # CalcMachine
 
-You Might Wonder: "**WHAT** is **CalcMachine ?**", "**HOW** to use**CalcMachine ?**" and "**WHY** should i use **CalcMachine ?**", this ReadMe proposes to explain it. 
+For the questions you may have about CalcMachine:
+
+- [**WHAT** Is CalcMachine ?](#id-section1)
+- [**HOW**  To Use CalcMachine ?](#id-section2)
+- [**WHY**  You Should Use CalcMachine ?](#id-section3)
+
+
+<div id='id-section1'/>
 
 ## WHAT Is CalcMachine
 
 CalcMachine is a Command-Line Calculator written in C# that proposes to be more potent than the old embedded calculators, while having most features from
 Scientific Calculators. CalcMachine also has some unique features that many calculators, physical or not, lack.
+
+<div id='id-section2'/>
 
 ## HOW To Use CalcMachine
 
@@ -15,6 +24,8 @@ The program guides you with descriptive text splashes since I want it to be usab
 for exceptions and better interface support.
 
 By being a C# 10 Program, it requires the .NET Frameork 6 to run, download it [here](https://dotnet.microsoft.com/en-us/download/dotnet/6.0).
+
+<div id='id-section3'/>
 
 ## WHY should I use CalcMachine
 
