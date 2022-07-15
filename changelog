@@ -1,3 +1,8 @@
+-Beta 2.2.0
+-Added Conversion Class for Unit Measure Conversion;
+-Added Non-Regular Polygons to Geometry Class;
+-Some Minor changes here and there;
+
 -Beta 2.1.0
 -Rewrote some sections of the code;
 -Re-structured it to be organized into classes;
