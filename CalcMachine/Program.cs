@@ -380,7 +380,6 @@ namespace CalcMachine
             {
                 Console.WriteLine("Write the value you know and then what it is (LEGS or BASE or)");
                 double value = Convert.ToDouble(Console.ReadLine());
-                double unknown = 0;
                 string property = Console.ReadLine() ?? "LEGS";
                 if (property == "LEGS")
                 {
@@ -501,8 +500,6 @@ namespace CalcMachine
 
 
          }
-
-
 
         public static class Function
         {
@@ -733,6 +730,7 @@ namespace CalcMachine
                 Console.WriteLine($"The smallest number is {dataSet[0]}");                
             }
         }
+
         public static class Conversion
         {
             public static void Open()
@@ -1011,6 +1009,26 @@ namespace CalcMachine
              
             }
         }
+ 
+        public static class Other
+        {
+            public static void Prime()
+            {
+                Console.WriteLine("Write your number");
+                    int num = Convert.ToInt32(Console.ReadLine() ?? "2");
+                    for(int n = 2; n <= num; n++)
+                    {                
+                        int primecheck = 0;
+                        for(int i = 1; i < n; i++)
+                        {
+                            if(n % i == 0) {primecheck = primecheck+1; }
+                        }
+                        if (primecheck > 1) {Console.WriteLine($"{n} is not prime"); }
+                        else                {Console.WriteLine($"{n} is prime"); }
+                    }
+            }
+        }
+ 
         public static void MainMenu()
             {
             bool whiler = true;
@@ -1026,7 +1044,8 @@ namespace CalcMachine
                 |4 or FUNC     - Go to the Function Calculator.
                 |5 or STATS    - Go to the Statistic Calculator.
                 |6 or CONVERT  - Go to the Conversion Calculator.
-                |7 or EXIT     - Exits the Program.
+                |7 or OTHER    - Go to other Calculators.
+                |8 or EXIT     - Exits the Program.
                 |_______________________________________________________");
                 string OpeningMenu = Console.ReadLine() ?? "1";
 
@@ -1036,7 +1055,8 @@ namespace CalcMachine
                 if (OpeningMenu == "4") { OpeningMenu = "FUNC";    }
                 if (OpeningMenu == "5") { OpeningMenu = "STATS";   }
                 if (OpeningMenu == "6") { OpeningMenu = "CONVERT"; }
-                if (OpeningMenu == "7") { OpeningMenu = "EXIT";    }
+                if (OpeningMenu == "7") { OpeningMenu = "OTHER";   }
+                if (OpeningMenu == "8") { OpeningMenu = "EXIT";    }
                 OpeningMenu = OpeningMenu.ToUpper(); //Case insensitiviness
 
                 switch (OpeningMenu)
@@ -1065,7 +1085,9 @@ namespace CalcMachine
                     case "CONVERT":
                     Conversion.Open();
                     break;
-                    
+                    case "OTHER":
+                    Other.Prime();
+                    break;
                     case "EXIT":
                     whiler = false;
                     break;
