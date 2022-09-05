@@ -1,0 +1,13 @@
+
+                Write the following commands for what you want to do:
+
+                |1 or BASIC    - Go to the Basic Arithmetic Calculator.
+                |2 or TRIG     - Go to the Trigonometric Function Calculator.
+                |3 or GEO      - Go to the Geometry/Polygon Calculator.
+                |4 or FUNC     - Go to the Function Calculator.
+                |5 or STATS    - Go to the Statistic Calculator.
+                |6 or CONVERT  - Go to the Conversion Calculator.
+                |7 or OTHER    - Go to other Calculators.
+                |8 or LOG      - Writes all the calculations into a file.
+                |9 or EXIT     - Exits the Program.
+                |_______________________________________________________

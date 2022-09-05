@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USUARIO\\Documents\\Programação\\CalcMachine\\CalcMachine beta 2.2.1\\CalcMachine\\CalcMachine.csproj": {}
+    "C:\\Users\\USUARIO\\Documents\\GitHub\\CalcMachine\\CalcMachine\\CalcMachine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USUARIO\\Documents\\Programação\\CalcMachine\\CalcMachine beta 2.2.1\\CalcMachine\\CalcMachine.csproj": {
+    "C:\\Users\\USUARIO\\Documents\\GitHub\\CalcMachine\\CalcMachine\\CalcMachine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\Programação\\CalcMachine\\CalcMachine beta 2.2.1\\CalcMachine\\CalcMachine.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\GitHub\\CalcMachine\\CalcMachine\\CalcMachine.csproj",
         "projectName": "CalcMachine",
-        "projectPath": "C:\\Users\\USUARIO\\Documents\\Programação\\CalcMachine\\CalcMachine beta 2.2.1\\CalcMachine\\CalcMachine.csproj",
+        "projectPath": "C:\\Users\\USUARIO\\Documents\\GitHub\\CalcMachine\\CalcMachine\\CalcMachine.csproj",
         "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USUARIO\\Documents\\Programação\\CalcMachine\\CalcMachine beta 2.2.1\\CalcMachine\\obj\\",
+        "outputPath": "C:\\Users\\USUARIO\\Documents\\GitHub\\CalcMachine\\CalcMachine\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

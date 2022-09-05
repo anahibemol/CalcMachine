@@ -1,3 +1,5 @@
+using System;
+
 namespace CalcMachine
 {
 
@@ -1086,7 +1088,18 @@ namespace CalcMachine
                     }
             }
         }
- 
+
+        public static void Log()
+        {
+            Console.WriteLine("Your log will be saved into CalcMachine/log.txt");
+            string filePath = Directory.GetCurrentDirectory();
+
+            FileStream filestream = new FileStream("log.txt", FileMode.Create);
+            var streamwriter = new StreamWriter(filestream);
+            streamwriter.AutoFlush = true;
+            Console.SetOut(streamwriter);
+            Console.SetError(streamwriter);
+        }
         public static void MainMenu()
             {
             bool whiler = true;
@@ -1103,50 +1116,49 @@ namespace CalcMachine
                 |5 or STATS    - Go to the Statistic Calculator.
                 |6 or CONVERT  - Go to the Conversion Calculator.
                 |7 or OTHER    - Go to other Calculators.
-                |8 or EXIT     - Exits the Program.
+                |8 or LOG      - Writes all the calculations into a file.
+                |9 or EXIT     - Exits the Program.
                 |_______________________________________________________");
                 string OpeningMenu = Console.ReadLine() ?? "1";
 
-                if (OpeningMenu == "1") { OpeningMenu = "BASIC";   }
-                if (OpeningMenu == "2") { OpeningMenu = "TRIG";    }
-                if (OpeningMenu == "3") { OpeningMenu = "GEO";     }
-                if (OpeningMenu == "4") { OpeningMenu = "FUNC";    }
-                if (OpeningMenu == "5") { OpeningMenu = "STATS";   }
-                if (OpeningMenu == "6") { OpeningMenu = "CONVERT"; }
-                if (OpeningMenu == "7") { OpeningMenu = "OTHER";   }
-                if (OpeningMenu == "8") { OpeningMenu = "EXIT";    }
                 OpeningMenu = OpeningMenu.ToUpper(); //Case insensitiviness
 
                 switch (OpeningMenu)
                 {
 
-                    case "BASIC":
+                    case "BASIC" or "1":
                     Basic.Open();
                     break;
   
-                    case "TRIG":
+                    case "TRIG" or "2":
                     Trigonometric.Open();
                     break;
 
-                    case "GEO":
+                    case "GEO" or "3":
                     Geometric.Open();
                     break;
 
-                    case "FUNC":
+                    case "FUNC" or "4":
                     Function.Open();
                     break;
 
-                    case "STATS":
+                    case "STATS" or "5":
                     Statitics.Open();
                     break;
 
-                    case "CONVERT":
+                    case "CONVERT" or "6":
                     Conversion.Open();
                     break;
-                    case "OTHER":
+
+                    case "OTHER" or "7":
                     Other.Prime();
                     break;
-                    case "EXIT":
+
+                    case "LOG" or "8":
+                    Log();
+                    break;
+
+                    case "EXIT" or "9":
                     whiler = false;
                     break;
                 }
@@ -1161,7 +1173,7 @@ namespace CalcMachine
           | |   /     /   \  |     /    \     /|   /   \   /    |   |  |  |\   | |      |                  /    _/
           | |  |     |     | |    |     |\   / |  |     | |     |___|  |  | \  | |__    |                 /   _/
           | |  |     |_____| |    |     | \_/  |  |_____| |     |   |  |  |  \ | |      |                /  _/
-          | |   \__  |     | |___  \__  |      |  |     |  \__  |   |  |  |   \| |____  | v. Beta 2.1.0 / _/
+          | |   \__  |     | |___  \__  |      |  |     |  \__  |   |  |  |   \| |____  | v. Beta 2.3.0 / _/
          /  |_________________________________________________________________________|______________/_/
             ");
             Programa.MainMenu();
