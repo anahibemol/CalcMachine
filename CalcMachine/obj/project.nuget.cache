@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "XNV/g35Dp6d/f8US7n9LCHeDLqrteQxEepjkWMwb1t6qShVwFmdpbO/RZoishZleCkdOpdlg8CdptFVx+1AI0g==",
+  "dgSpecHash": "8EvmY3huuqL5iTN2qSeAVGrL78itI7U+GeQeX0Iu1U66zpJjHI6eUApPxzN2V5dcnE38icOMc1S/mHzMpXV+8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USUARIO\\Documents\\GitHub\\CalcMachine\\CalcMachine\\CalcMachine.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\nulos\\Documentos\\GitHub\\CalcMachine\\CalcMachine\\CalcMachine.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nulos\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\nulos\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\nulos\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\nulos\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.11\\microsoft.netcore.app.host.win-x64.6.0.11.nupkg.sha512"
+  ],
   "logs": []
 }
