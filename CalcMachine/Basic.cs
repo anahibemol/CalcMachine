@@ -13,9 +13,6 @@ namespace CalcMachine
                 |3 or BACK   - Goes Back to Main Menu.
                 |__________________________________________________________");
                 string? Switch = Console.ReadLine() ?? "0";
-                if (Switch == "1") { Switch = "SIMPLE"; }
-                if (Switch == "2") { Switch = "FULL"; }
-                if (Switch == "3") { Switch = "BACK"; }
                 Switch = Switch.ToUpper();
 
                 Console.WriteLine(@"
@@ -31,15 +28,15 @@ namespace CalcMachine
 
                 switch(Switch)
                 {
-                case "SIMPLE":
+                case "SIMPLE" or "1":
                     Simple();
                 break;
 
-                case "FULL":
+                case "FULL" or "2":
                     Full();
                 break;
 
-                case "BACK":
+                case "BACK" or "3":
                     Programa.MainMenu();
                 break;               
                 }

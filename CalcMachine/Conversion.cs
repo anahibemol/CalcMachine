@@ -15,28 +15,24 @@ namespace CalcMachine
                 |5 or BACK   - Goes Back to Main Menu.
                 |___________________________________________________");
                 string? Switch = Console.ReadLine() ?? "0";
-                if (Switch == "1") { Switch= "LONG"; }
-                if (Switch == "2") { Switch= "HEAVY"; }
-                if (Switch == "3") { Switch= "FAST"; }
-                if (Switch == "4") { Switch= "HOT"; }
-                if (Switch == "5") { Switch= "BACK"; }
+
                 Switch = Switch.ToUpper();
 
                 switch(Switch)
                 {
-                case "LONG":
+                case "LONG" or "1":
                     Lenght();
                 break;
-                case "HEAVY":
+                case "HEAVY" or "2":
                     Weight();
                 break;
-                case "FAST":
+                case "FAST" or "3":
                     Speed();
                 break;
-                case "HOT":
+                case "HOT" or "4":
                     Temperature();
                 break;
-                case "BACK":
+                case "BACK" or "5":
                     Programa.MainMenu();
                 break;               
                 }

@@ -12,17 +12,15 @@ namespace CalcMachine
                 |2 or BACK    - Goes Back to Main Menu.
                 |__________________________________________________________");
                 string? Switch = Console.ReadLine() ?? "0";
-                if (Switch == "1") { Switch = "IDS"; }
-                if (Switch == "2") { Switch = "BACK"; }
                 Switch = Switch.ToUpper();
 
                 switch(Switch)
                 {
-                case "IDS":
+                case "IDS" or "1":
                     Ids();
                 break;
 
-                case "BACK":
+                case "BACK" or "2":
                     Programa.MainMenu();
                 break;               
                 }

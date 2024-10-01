@@ -14,24 +14,20 @@ public static class Geometric
                 |4 or BACK    - Goes Back to Main Menu.
                 |___________________________________________________");
                 string? Switch = Console.ReadLine() ?? "0";
-                if (Switch == "1") { Switch= "POLYGON"; }
-                if (Switch == "2") { Switch= "CIRCLE"; }
-                if (Switch == "3") { Switch= "OTHER"; }
-                if (Switch == "4") { Switch= "BACK"; }
                 Switch = Switch.ToUpper();
 
                 switch(Switch)
                 {
-                case "POLYGON":
+                case "POLYGON" or "1":
                     Polygon();
                 break;
-                case "CIRCLE":
+                case "CIRCLE" or "2":
                     Circle();
                 break;
-                case "OTHER":
+                case "OTHER" or "3":
                     Other.Open();
                 break;
-                case "BACK":
+                case "BACK" or "4":
                     Programa.MainMenu();
                 break;               
                 }
@@ -132,19 +128,19 @@ public static class Geometric
 
                 switch(Switch)
                 {
-                case "ISOSCELES":
+                case "ISOSCELES" or "1":
                     Isosceles();
                 break;
-                case "TRIRECT":
+                case "TRIRECT" or "2":
                     Trirect();
                 break;
-                case "TRAPEZIUM":
+                case "TRAPEZIUM" or "3":
                     Trapezium();
                 break;
-                case "RECTANGLE":
+                case "RECTANGLE" or "4":
                     Rectangle();
                 break;
-                case "BACK":
+                case "BACK" or "5":
                     Geometric.Open();
                 break;               
                 }

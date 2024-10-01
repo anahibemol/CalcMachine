@@ -14,24 +14,20 @@ namespace CalcMachine
                 |4 or BACK       - Goes Back to Main Menu.
                 |___________________________________________________");
                 string? Switch = Console.ReadLine() ?? "0";
-                if (Switch == "1") { Switch= "LINEAR"; }
-                if (Switch == "2") { Switch= "QUAD"; }
-                if (Switch == "3") { Switch= "CUBIC"; }
-                if (Switch == "4") { Switch= "BACK"; }
                 Switch = Switch.ToUpper();
 
                 switch(Switch)
                 {
-                case "LINEAR":
+                case "LINEAR" or "1":
                     Process(1);
                 break;
-                case "QUAD":
+                case "QUAD" or "2":
                     Process(2);
                 break;
-                case "CUBIC":
+                case "CUBIC" or "3":
                     Process(3);
                 break;
-                case "BACK":
+                case "BACK" or "4":
                     Programa.MainMenu();
                 break;               
                 }
